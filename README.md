@@ -1,50 +1,72 @@
 # Documentation Repository
 
-This repository contains the documentation built with Mintlify.
+This is a **Mintlify starter template** repository. Most files are placeholder examples from Mintlify that should be replaced with your actual documentation.
 
-## 📁 Documentation Structure
+## 📁 Repository Structure
 
-### Root Directory
-The root directory contains the main documentation pages and configuration:
+```
+docs/
+├── docs.json                    # Configuration (customize this)
+├── README.md                    # This file
+├── CONTRIBUTING.md              # Contribution guide
+├── DOCS_STRUCTURE.md            # Quick reference
+│
+├── ROOT LEVEL - Your main documentation pages
+│   ├── index.mdx                # ⚠️ TEMPLATE - Replace with your homepage
+│   ├── quickstart.mdx           # ⚠️ TEMPLATE - Mintlify quickstart example
+│   ├── development.mdx          # ⚠️ TEMPLATE - Mintlify dev guide example
+│   └── native-host.mdx          # ✅ CUSTOM - Actual project documentation
+│
+├── essentials/                  # ⚠️ TEMPLATE - Mintlify examples
+│   ├── markdown.mdx             # Example: Markdown syntax guide
+│   ├── code.mdx                 # Example: Code block guide
+│   ├── images.mdx               # Example: Image usage guide
+│   ├── settings.mdx             # Example: Settings reference
+│   ├── navigation.mdx           # Example: Navigation guide
+│   └── reusable-snippets.mdx    # Example: Snippets guide
+│
+├── api-reference/               # ⚠️ TEMPLATE - API doc examples
+│   ├── introduction.mdx         # Example: API intro
+│   ├── openapi.json             # Example: OpenAPI spec
+│   └── endpoint/                # Example endpoint docs
+│       ├── get.mdx              # Example: GET /plants
+│       ├── create.mdx           # Example: CREATE
+│       ├── delete.mdx           # Example: DELETE
+│       └── webhook.mdx          # Example: Webhook
+│
+├── snippets/                    # Reusable content snippets
+│   └── snippet-intro.mdx        # ⚠️ TEMPLATE - Example snippet
+│
+├── images/                      # Image assets (add your own)
+├── logo/                        # Logo files (replace with your brand)
+└── favicon.svg                  # Site icon (replace with your brand)
+```
 
-- **`docs.json`** - Main configuration file that defines navigation, theme, and structure
-- **`index.mdx`** - Homepage/landing page
-- **`quickstart.mdx`** - Quick start guide
-- **`development.mdx`** - Development guide
-- **`native-host.mdx`** - Native host documentation
+## ⚠️ Template vs Custom Content
 
-### Documentation Directories
+### Template Files (Replace These)
+Most files in this repository are **Mintlify template examples**:
+- `index.mdx` - Generic Mintlify welcome page
+- `quickstart.mdx` - How to use Mintlify (not your project)
+- `development.mdx` - Mintlify CLI usage guide
+- `essentials/*` - Examples of Markdown/component usage
+- `api-reference/*` - Example API documentation structure
+- All files in `api-reference/endpoint/` - Placeholder endpoint docs
 
-#### `/essentials/`
-Contains essential guides and best practices:
-- `markdown.mdx` - Markdown formatting guide
-- `code.mdx` - Code blocks and syntax highlighting
-- `images.mdx` - Image usage and formatting
-- `settings.mdx` - Settings and configuration
-- `navigation.mdx` - Navigation structure guide
-- `reusable-snippets.mdx` - Reusable content snippets
+### Custom Content (Keep/Modify These)
+- `native-host.mdx` - **Real documentation** for MCP-B Native Host setup
+- `docs.json` - Configuration (already partially customized)
+- `README.md`, `CONTRIBUTING.md`, `DOCS_STRUCTURE.md` - Repository meta docs
 
-#### `/api-reference/`
-Contains API documentation:
-- `introduction.mdx` - API overview and introduction
-- `openapi.json` - OpenAPI specification
+## 🎯 What This Repository Is
 
-#### `/api-reference/endpoint/`
-Individual API endpoint documentation:
-- `get.mdx` - GET endpoint examples
-- `create.mdx` - CREATE/POST endpoint examples
-- `delete.mdx` - DELETE endpoint examples
-- `webhook.mdx` - Webhook endpoint examples
+This is a **Mintlify documentation starter** that shows:
+- How to structure Mintlify docs
+- Example pages and components
+- Sample navigation setup
+- Template API documentation
 
-#### `/snippets/`
-Reusable content snippets that can be included in multiple pages:
-- `snippet-intro.mdx` - Example snippet
-
-#### `/images/`
-Image assets used throughout the documentation
-
-#### `/logo/`
-Logo files (light and dark variants)
+**Currently:** Only `native-host.mdx` contains actual project documentation. Everything else is boilerplate.
 
 ## 🚀 Local Development
 
@@ -60,21 +82,59 @@ Run the development server at the root of your documentation (where docs.json is
 mintlify dev
 ```
 
+## 🔧 Customizing This Template
+
+### Step 1: Clean Up Template Files
+Decide what to keep:
+- **Delete** template files you don't need (`essentials/`, example API docs)
+- **Replace** `index.mdx` with your actual homepage
+- **Remove or repurpose** `quickstart.mdx` and `development.mdx`
+- **Keep** `native-host.mdx` (or any custom docs you've added)
+
+### Step 2: Update docs.json
+Edit `docs.json` to reflect your documentation structure:
+- Remove references to deleted template files
+- Update site name, colors, and branding
+- Restructure navigation tabs and groups
+- Update logo paths
+
+### Step 3: Add Your Content
+1. Create `.mdx` files for your documentation
+2. Add them to appropriate directories (or create new ones)
+3. Reference them in `docs.json` (without .mdx extension)
+
+### Step 4: Replace Branding
+- Update `/logo/light.svg` and `/logo/dark.svg` with your logos
+- Replace `favicon.svg` with your icon
+- Update colors in `docs.json`
+
 ## 📝 Adding New Documentation
 
-### Adding a New Guide
-1. Create a new `.mdx` file in the root directory or appropriate subdirectory
-2. Add the file path to `docs.json` in the relevant navigation section
-3. Use the format: `"path/to/file"` (without the .mdx extension)
+### Where to Put Files
 
-### Adding a New API Endpoint
-1. Create a new `.mdx` file in `/api-reference/endpoint/`
-2. Add the file path to the "Endpoint Examples" group in `docs.json`
+| Content Type | Location | Example |
+|-------------|----------|---------|
+| Main guides | Root (`/`) | `getting-started.mdx` |
+| API docs | `/api-reference/` | `api-reference/authentication.mdx` |
+| Reference docs | Create new folder | `/guides/installation.mdx` |
+| Reusable snippets | `/snippets/` | `snippets/common-warning.mdx` |
 
-### Adding a New Section
-1. Create a new directory for your section
-2. Add your `.mdx` files to the directory
-3. Update `docs.json` to include a new group with the files
+### Adding a New Page
+1. Create your `.mdx` file in the appropriate directory
+2. Add frontmatter with title and description:
+   ```mdx
+   ---
+   title: 'Page Title'
+   description: 'Page description'
+   ---
+   ```
+3. Add the file path to `docs.json` navigation (without `.mdx`):
+   ```json
+   {
+     "group": "Your Group",
+     "pages": ["path/to/file"]
+   }
+   ```
 
 ## 🔧 Configuration
 

@@ -1,18 +1,27 @@
 # Documentation Structure Quick Reference
 
-This is a quick reference guide for understanding where documentation files are located and where to add new content.
+⚠️ **Important**: This is a Mintlify starter template. Most files are examples, not real documentation.
 
-## 🗂️ Directory Structure at a Glance
+## 📋 Current Repository Status
 
-| Directory | Purpose | When to Use |
-|-----------|---------|-------------|
-| `/` (root) | Main guide pages | Landing page, quickstart, high-level guides |
-| `/essentials/` | Core documentation guides | Best practices, formatting guides, how-tos |
-| `/api-reference/` | API documentation | API overview, OpenAPI specs |
-| `/api-reference/endpoint/` | Individual endpoints | Specific API endpoint examples |
-| `/snippets/` | Reusable content | Content used across multiple pages |
-| `/images/` | Image assets | Screenshots, diagrams, icons |
-| `/logo/` | Brand assets | Light/dark logo variants |
+| Category | Status | Notes |
+|----------|--------|-------|
+| **Real Documentation** | `native-host.mdx` | MCP-B Native Host setup guide |
+| **Template Files** | Most other .mdx files | Mintlify examples to replace/remove |
+| **Configuration** | `docs.json` | Partially customized |
+| **Meta-Docs** | README, CONTRIBUTING | Repository documentation |
+
+## 🗂️ Directory Structure
+
+| Directory | Current Content | What to Do |
+|-----------|----------------|------------|
+| `/` (root) | Template examples + native-host.mdx | Keep custom docs, replace templates |
+| `/essentials/` | Mintlify formatting examples | Replace with real guides or delete |
+| `/api-reference/` | Example API docs (plants endpoint) | Replace with real API docs or delete |
+| `/api-reference/endpoint/` | Example endpoints | Replace with real endpoints or delete |
+| `/snippets/` | Example snippet | Add reusable content here |
+| `/images/` | Example images | Add your screenshots/diagrams |
+| `/logo/` | Placeholder logos | Replace with your branding |
 
 ## 📄 File Types
 
@@ -24,68 +33,67 @@ This is a quick reference guide for understanding where documentation files are 
 
 ## 🎯 Quick Decision Tree
 
-**I want to add...**
+**I want to add real documentation (not templates)...**
 
-### A New Getting Started Guide
+### Option 1: Add to Root (Recommended for Main Docs)
+Like `native-host.mdx`:
 - **Location**: Root directory (`/`)
-- **File**: `your-guide.mdx`
+- **File**: `your-doc.mdx`
 - **Update**: Add to `docs.json` → `navigation.tabs[0].groups[0].pages`
-- **Example**: `"your-guide"`
+- **Example**: `"your-doc"`
 
-### A New Essential Guide
-- **Location**: `/essentials/`
-- **File**: `essentials/your-guide.mdx`
-- **Update**: Add to `docs.json` → `navigation.tabs[0].groups[1].pages`
-- **Example**: `"essentials/your-guide"`
+### Option 2: Create New Directory
+For organized documentation:
+- **Location**: Create `/guides/` or similar
+- **File**: `guides/your-doc.mdx`
+- **Update**: Create new group in `docs.json` or add to existing
+- **Example**: `"guides/your-doc"`
 
-### A New API Endpoint
-- **Location**: `/api-reference/endpoint/`
-- **File**: `api-reference/endpoint/your-endpoint.mdx`
-- **Update**: Add to `docs.json` → `navigation.tabs[1].groups[1].pages`
-- **Example**: `"api-reference/endpoint/your-endpoint"`
+### Option 3: Replace Template Files
+Repurpose existing directories:
+- **Replace** files in `/essentials/` with your guides
+- **Replace** files in `/api-reference/` with your API docs
+- **Update** `docs.json` to reflect new content
 
-### A New API Section
-- **Location**: `/api-reference/`
-- **File**: `api-reference/your-section.mdx`
-- **Update**: Add to `docs.json` → `navigation.tabs[1].groups[0].pages`
-- **Example**: `"api-reference/your-section"`
-
-### A Reusable Snippet
+### Adding Reusable Snippets
 - **Location**: `/snippets/`
 - **File**: `snippets/your-snippet.mdx`
 - **Update**: No need to add to `docs.json`
-- **Usage**: Reference via `<Snippet file="your-snippet.mdx" />`
+- **Usage**: `<Snippet file="your-snippet.mdx" />`
 
-### An Image
+### Adding Images
 - **Location**: `/images/`
 - **File**: `images/your-image.png`
 - **Update**: No need to add to `docs.json`
-- **Usage**: Reference via `![Alt text](/images/your-image.png)`
+- **Usage**: `![Alt text](/images/your-image.png)`
 
-## 🔍 Current Documentation Pages
+## 🔍 Current Files in Repository
 
 ### Root Pages (Tab: "Guides" → "Get Started")
-- `index.mdx` - Homepage
-- `quickstart.mdx` - Quickstart guide
-- `development.mdx` - Development setup
-- `native-host.mdx` - Native host documentation
+- `index.mdx` - ⚠️ TEMPLATE - Generic Mintlify welcome page
+- `quickstart.mdx` - ⚠️ TEMPLATE - How to use Mintlify
+- `development.mdx` - ⚠️ TEMPLATE - Mintlify CLI guide
+- `native-host.mdx` - ✅ **REAL** - MCP-B Native Host setup
 
-### Essentials Pages (Tab: "Guides" → "Essentials")
-- `essentials/markdown.mdx` - Markdown guide
-- `essentials/code.mdx` - Code formatting
-- `essentials/images.mdx` - Image usage
-- `essentials/settings.mdx` - Settings configuration
-- `essentials/navigation.mdx` - Navigation setup
-- `essentials/reusable-snippets.mdx` - Snippets guide
+### Essentials (Tab: "Guides" → "Essentials")
+All ⚠️ TEMPLATES - Mintlify component examples:
+- `essentials/markdown.mdx` - Markdown syntax examples
+- `essentials/code.mdx` - Code block examples
+- `essentials/images.mdx` - Image usage examples
+- `essentials/settings.mdx` - Settings reference examples
+- `essentials/navigation.mdx` - Navigation examples
+- `essentials/reusable-snippets.mdx` - Snippets examples
 
-### API Reference Pages (Tab: "API Reference" → "API Documentation")
-- `api-reference/introduction.mdx` - API overview
+### API Reference (Tab: "API Reference" → "API Documentation")
+All ⚠️ TEMPLATES:
+- `api-reference/introduction.mdx` - Generic API intro
 
-### API Endpoint Pages (Tab: "API Reference" → "Endpoint Examples")
-- `api-reference/endpoint/get.mdx` - GET examples
-- `api-reference/endpoint/create.mdx` - CREATE examples
-- `api-reference/endpoint/delete.mdx` - DELETE examples
-- `api-reference/endpoint/webhook.mdx` - Webhook examples
+### API Endpoints (Tab: "API Reference" → "Endpoint Examples")
+All ⚠️ TEMPLATES - Example "plants" API:
+- `api-reference/endpoint/get.mdx` - Example GET /plants
+- `api-reference/endpoint/create.mdx` - Example CREATE
+- `api-reference/endpoint/delete.mdx` - Example DELETE
+- `api-reference/endpoint/webhook.mdx` - Example webhook
 
 ## 🔧 docs.json Navigation Mapping
 
@@ -132,15 +140,25 @@ find . -name "*.mdx" -type f
 cat docs.json | jq .
 ```
 
-## 💡 Pro Tips
+## 💡 Key Points
 
-1. **File paths in docs.json**: Never include the `.mdx` extension
-2. **Relative paths**: All paths in `docs.json` are relative to repo root
-3. **Testing**: Always test with `mintlify dev` before committing
-4. **Naming**: Use lowercase-with-hyphens for file names
-5. **Organization**: Group related docs in subdirectories
-6. **Snippets**: Use snippets for content repeated across pages
-7. **Images**: Store all images in `/images/` for consistency
+1. **This is a template repository** - Most files are Mintlify examples
+2. **Only native-host.mdx is real documentation** currently
+3. **Template files can be:**
+   - Replaced with your content
+   - Deleted (and removed from `docs.json`)
+   - Kept as examples/reference
+4. **File paths in docs.json**: Never include the `.mdx` extension
+5. **Testing**: Always test with `mintlify dev` before committing
+6. **Organization**: Create your own structure or use existing directories
+
+## 🚀 Next Steps for This Repository
+
+1. **Decide on structure**: Keep templates or replace them?
+2. **Update docs.json**: Remove unused template references
+3. **Add real content**: Create documentation for your project
+4. **Update branding**: Replace logos, colors, site name
+5. **Clean up**: Delete unused template files
 
 ## 🔗 Related Files
 
